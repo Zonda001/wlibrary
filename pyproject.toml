@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wlibrary"
+version = "1.0.0"
+description = "Python library for intelligent Excel file processing with automatic data cleaning and type detection"
+readme = "README.md"
+authors = [
+    {name = "Denys Sidorov", email = "sidorovdenys9@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business :: Financial :: Spreadsheet",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+keywords = ["excel", "pandas", "data-cleaning", "data-analysis", "type-detection", "quality-metrics"]
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "openpyxl>=3.0.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+all = [
+    "pyyaml>=6.0",
+    "tqdm>=4.65.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Zonda001/wlibrary"
+Repository = "https://github.com/Zonda001/wlibrary"
+"Bug Reports" = "https://github.com/Zonda001/wlibrary/issues"
+
+[project.scripts]
+wlibrary-test = "wlibrary.quick_test:main"
+
+[tool.setuptools.packages.find]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
