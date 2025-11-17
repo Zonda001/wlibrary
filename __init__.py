@@ -1,5 +1,5 @@
 """
-wlibrary v1.0 - Excel Processing Library
+wlibrary v1.1 - Excel Processing Library
 =========================================
 
 Quick Start:
@@ -49,7 +49,7 @@ Quality:
     print(info['anomalies'])
 
 Author: Denys Sidorov
-Version: 1.0.0
+Version: 1.1.0
 """
 
 # Core imports
@@ -89,6 +89,17 @@ from .multi_sheet_reader import (
     smart_read_all_sheets,
     MultiSheetStructure,
 )
+
+try:
+    from .config import get_config, set_config, load_config, Config
+    _has_config = True
+except ImportError:
+    # Config module is optional
+    _has_config = False
+    get_config = None
+    set_config = None
+    load_config = None
+    Config = None
 
 
 # ============================================================================
@@ -223,7 +234,7 @@ ISSUES: {len(s['anomalies'])}
 # Version Info
 # ============================================================================
 
-__version__ = "2.0.0"
+__version__ = "1.1.0"
 __author__ = "Denys Sidorov"
 
 __all__ = [
@@ -255,6 +266,10 @@ __all__ = [
     'smart_read', 'smart_read_all_sheets',
 ]
 
+# Add config to exports if available
+if _has_config:
+    __all__.extend(['get_config', 'set_config', 'load_config', 'Config'])
+
 
 # ============================================================================
 # Quick Help
@@ -263,7 +278,7 @@ __all__ = [
 def help():
     """Show quick help."""
     print("""
-wlibrary v2.0 - Quick Reference
+wlibrary v1.1 - Quick Reference
 ================================
 
 READING:
