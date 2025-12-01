@@ -26,7 +26,7 @@ else:
 
 setup(
     name="wlibrary",
-    version="1.1.0",
+    version="1.1.1",
     author="Sidorov Denis",
     author_email="sidorovdenys9@gmail.com",
     description="Universal Excel file processing library for intelligent data import, cleaning, analysis, and export",
