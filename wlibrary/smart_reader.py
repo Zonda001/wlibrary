@@ -12,7 +12,6 @@ Automatically detects and processes complex Excel structures:
 import logging
 from typing import Dict, List, Optional, Tuple, Any
 import pandas as pd
-import numpy as np
 
 logger = logging.getLogger(__name__)
 
@@ -299,7 +298,7 @@ def smart_read(file_path: str, **kwargs) -> SmartStructure:
         >>> print(structure.metadata['project_name'])
         >>> print(structure.table_data.head())
     """
-    from .reader import import_excel
+    from wlibrary.reader import import_excel
 
     logger.info(f"Smart reading: {file_path}")
 

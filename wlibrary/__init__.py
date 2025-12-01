@@ -49,7 +49,7 @@ Quality:
     print(info['anomalies'])
 
 Author: Denys Sidorov
-Version: 1.1.0
+Version: 1.1.1
 """
 
 # Core imports
